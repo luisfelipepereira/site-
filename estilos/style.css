@@ -155,6 +155,16 @@ p {
     border-radius: 8px;
     padding: 0.35rem 0.65rem;
     font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.skill-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    flex-shrink: 0;
 }
 
 .grade-projetos {
