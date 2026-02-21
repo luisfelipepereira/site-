@@ -24,7 +24,7 @@ html {
 }
 
 body {
-    font-family: "Segoe UI", Tahoma, sans-serif;
+    font-family: "Inter", "Segoe UI", Tahoma, sans-serif;
     color: var(--text);
     background:
         radial-gradient(circle at 0 0, #000000 0%, transparent 30%),
@@ -126,6 +126,7 @@ footer {
 }
 
 .tag {
+    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
     display: inline-block;
     border: 1px solid var(--line);
     border-radius: 99px;
@@ -135,6 +136,7 @@ footer {
 }
 
 h1 {
+    font-family: "Poppins", "Inter", sans-serif;
     font-size: clamp(2rem, 5vw, 3.1rem);
     line-height: 1.15;
     max-width: 17ch;
@@ -142,17 +144,44 @@ h1 {
 }
 
 h2 {
+    font-family: "Poppins", "Inter", sans-serif;
     font-size: clamp(1.35rem, 3vw, 2rem);
     margin-bottom: 0.8rem;
 }
 
 h3 {
+    font-family: "Poppins", "Inter", sans-serif;
     margin-bottom: 0.6rem;
 }
 
 p {
     color: var(--muted);
     max-width: 68ch;
+}
+
+.typing-caret {
+    display: inline-block;
+    border-right: 2px solid var(--muted);
+    padding-right: 0.1em;
+    animation: blink-caret 0.8s steps(1, end) infinite;
+}
+
+@keyframes blink-caret {
+    0%,
+    49% {
+        border-right-color: var(--muted);
+    }
+    50%,
+    100% {
+        border-right-color: transparent;
+    }
+}
+
+code,
+pre,
+kbd,
+samp {
+    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
 .acoes {
@@ -194,6 +223,22 @@ p {
     margin-bottom: 1rem;
 }
 
+.sobre-conteudo {
+    display: grid;
+    grid-template-columns: minmax(180px, 320px) 1fr;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.perfil-img {
+    width: 100%;
+    max-width: 320px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 1px solid var(--line);
+}
+
 .habilidades {
     list-style: none;
     display: flex;
@@ -203,6 +248,7 @@ p {
 }
 
 .habilidades li {
+    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
     background-color: #000000;
     color: #ffffff;
     border-radius: 8px;
@@ -237,6 +283,15 @@ p {
     border-radius: 12px;
     padding: 1rem;
     transition: box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.projeto-thumb {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    margin-bottom: 0.8rem;
 }
 
 .card::before {
@@ -331,5 +386,13 @@ p {
 
     .bloco {
         padding: 1.25rem;
+    }
+
+    .sobre-conteudo {
+        grid-template-columns: 1fr;
+    }
+
+    .perfil-img {
+        max-width: 220px;
     }
 }
