@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfólio pessoal com projetos, habilidades e formas de contato.">
     <title>Luiz Felipe Pereira de Lima | Portfólio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfólio pessoal com projetos, habilidades e formas de contato.">
-    <title>Luiz Felipe Pereira de Lima | Portfólio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="estilos/style.css">
 </head>
 <body>
@@ -29,26 +29,28 @@
     <main id="inicio">
         <!-- EDICAO: texto principal da home -->
         <section class="hero container">
-            <p class="tag">Desenvolvedor em formação</p>
-            <h1>Desenvolvedor WEB!!</h1>
-            <p>Simples. Direto. Funcional.</p>
+            <h1 id="hero-title" aria-live="polite">Desenvolvedor WEB</h1>
+            <p id="hero-subtitle"></p>
             <div class="acoes">
                 <a class="botao primario" href="#projetos">PROJETOS</a>
-                <a class="botao secundario" href="#contato">CONTATO</a>
+                <a class="botao primario" href="#contato">CONTATO</a>
             </div>
         </section>
 
         <!-- EDICAO: sobre voce e lista de habilidades -->
         <section id="sobre" class="container bloco">
             <h2>SOBRE MIM!!</h2>
-            <p>
-             Sou estudante de Análise e Desenvolvimento de Sistemas, focado em construir
-             uma carreira sólida na área de programação e desenvolvimento de sistemas.<br>
-             Tenho interesse em desenvolvimento web e estou constantemente aprimorando
-             meus conhecimentos em HTML, CSS, JavaScript e lógica de programação. 
-             Busco oportunidades de estágio e projetos desafiadores que me permitam aplicar
-             minhas habilidades, evoluir tecnicamente e gerar soluções reais através da tecnologia.
-            </p>
+            <div class="sobre-conteudo">
+                <img class="perfil-img" src="imagens/Logo/LOGO5.png" alt="Foto de perfil de Luiz Felipe" width="320" height="320" loading="lazy" decoding="async">
+                <p>
+                 Sou estudante de Análise e Desenvolvimento de Sistemas, focado em construir
+                 uma carreira sólida na área de programação e desenvolvimento de sistemas.<br>
+                 Tenho interesse em desenvolvimento web e estou constantemente aprimorando
+                 meus conhecimentos em HTML, CSS, JavaScript e lógica de programação. 
+                 Busco oportunidades de estágio e projetos desafiadores que me permitam aplicar
+                 minhas habilidades, evoluir tecnicamente e gerar soluções reais através da tecnologia.
+                </p>
+            </div>
         </section>
 
         <!-- EDICAO: skills fora do card sobre mim -->
@@ -150,6 +152,31 @@
                 card.style.setProperty("--mx", `${x}px`);
                 card.style.setProperty("--my", `${y}px`);
             });
+        });
+
+        // EDICAO: efeito de digitacao ao abrir o site
+        const heroTitle = document.getElementById("hero-title");
+        const heroSubtitle = document.getElementById("hero-subtitle");
+        const heroTitleText = "Desenvolvedor WEB";
+        const heroSubtitleText = "";
+
+        const typeText = (element, text, speed, done) => {
+            let i = 0;
+            element.textContent = "";
+            element.classList.add("typing-caret");
+            const timer = setInterval(() => {
+                element.textContent += text[i];
+                i += 1;
+                if (i >= text.length) {
+                    clearInterval(timer);
+                    if (done) done();
+                }
+            }, speed);
+        };
+
+        typeText(heroTitle, heroTitleText, 80, () => {
+            heroTitle.classList.remove("typing-caret");
+            heroSubtitle.classList.remove("typing-caret");
         });
     </script>
 </body>
