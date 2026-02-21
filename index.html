@@ -8,77 +8,123 @@
     <link rel="stylesheet" href="estilos/style.css">
 </head>
 <body>
+    <!-- EDICAO: cabecalho e links do menu -->
     <header class="topo">
         <nav class="container menu">
-            <a class="logo" href="#inicio">Luiz Felipe Pereira de Lima</a>
-            <ul>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
+            <a class="logo" href="#inicio">
+                <img class="logo-icon" src="imagens/contato/github.svg" alt="Icone do logo" width="20" height="20" loading="lazy" decoding="async">
+                Luiz Felipe Pereira
+            </a>
+            <div class="nav-links">
+             <a href="#sobre">SOBRE</a>
+             <a href="#projetos">PROJETOS</a>
+             <a href="#contato">CONTATO</a>
+            </div>
         </nav>
     </header>
 
     <main id="inicio">
+        <!-- EDICAO: texto principal da home -->
         <section class="hero container">
             <p class="tag">Desenvolvedor em formação</p>
-            <section class="hero">
-          <h1>Crio sites rápidos e organizados.</h1>
-          <p>Simples. Direto. Funcional.</p>
-        </section>
+            <h1>Desenvolvedor WEB!!</h1>
+            <p>Simples. Direto. Funcional.</p>
             <div class="acoes">
-                <a class="botao primario" href="#projetos">Ver projetos</a>
-                <a class="botao secundario" href="#contato">Falar comigo</a>
+                <a class="botao primario" href="#projetos">PROJETOS</a>
+                <a class="botao secundario" href="#contato">CONTATO</a>
             </div>
         </section>
 
+        <!-- EDICAO: sobre voce e lista de habilidades -->
         <section id="sobre" class="container bloco">
             <h2>SOBRE MIM!!</h2>
             <p>
              Sou estudante de Análise e Desenvolvimento de Sistemas, focado em construir
-             uma carreira sólida na área de programação e desenvolvimento de sistemas.br 
+             uma carreira sólida na área de programação e desenvolvimento de sistemas.<br>
              Tenho interesse em desenvolvimento web e estou constantemente aprimorando
              meus conhecimentos em HTML, CSS, JavaScript e lógica de programação. 
              Busco oportunidades de estágio e projetos desafiadores que me permitam aplicar
              minhas habilidades, evoluir tecnicamente e gerar soluções reais através da tecnologia.
             </p>
-            <ul class="habilidades">
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>JavaScript</li>
-                <li>Git e GitHub</li>
-            </ul>
         </section>
 
+        <!-- EDICAO: skills fora do card sobre mim -->
+        <section id="habilidades" class="container bloco">
+            <h2>Habilidades</h2>
+            <article class="card">
+                <h3>Stack Atual</h3>
+                <ul class="habilidades">
+                    <li>
+                        <img class="skill-icon" src="imagens/skills/html5.svg" alt="Logo HTML5" width="20" height="20" loading="lazy" decoding="async">
+                        HTML5
+                    </li>
+                    <li>
+                        <img class="skill-icon" src="imagens/skills/css3.svg" alt="Logo CSS3" width="20" height="20" loading="lazy" decoding="async">
+                        CSS3
+                    </li>
+                    <li>
+                        <img class="skill-icon" src="imagens/skills/javascript.svg" alt="Logo JavaScript" width="20" height="20" loading="lazy" decoding="async">
+                        JavaScript
+                    </li>
+                    <li>
+                        <img class="skill-icon" src="imagens/skills/git.svg" alt="Logo Git" width="20" height="20" loading="lazy" decoding="async">
+                        <img class="skill-icon" src="imagens/skills/github.svg" alt="Logo GitHub" width="20" height="20" loading="lazy" decoding="async">
+                        Git e GitHub
+                    </li>
+                </ul>
+            </article>
+        </section>
+
+        <!-- EDICAO: cards de projetos -->
         <section id="projetos" class="container bloco">
             <h2>Projetos</h2>
             <div class="grade-projetos">
                 <article class="card">
                     <h3>Projeto 01</h3>
-                    <p>Descrição curta do projeto, problema que ele resolve e tecnologias usadas.</p>
+                    <p>Projetos em desenvolvimento.</p>
                     <a href="#" aria-label="Abrir projeto 01">Ver detalhes</a>
                 </article>
                 <article class="card">
                     <h3>Projeto 02</h3>
-                    <p>Descrição curta do projeto, problema que ele resolve e tecnologias usadas.</p>
+                    <p>Projetos em desenvolvimento.</p>
                     <a href="#" aria-label="Abrir projeto 02">Ver detalhes</a>
                 </article>
                 <article class="card">
                     <h3>Projeto 03</h3>
-                    <p>Descrição curta do projeto, problema que ele resolve e tecnologias usadas.</p>
+                    <p>Projetos em desenvolvimento.</p>
                     <a href="#" aria-label="Abrir projeto 03">Ver detalhes</a>
                 </article>
             </div>
         </section>
 
+        <!-- EDICAO: links de contato -->
         <section id="contato" class="container bloco">
             <h2>Contato</h2>
-            <p>Você pode me encontrar nos links abaixo:</p>
             <ul class="contato-lista">
-                <li><a href="#" target="_blank" rel="noopener https://github.com/luisfelipepereira">GitHub</a></li>
-                <li><a href="#" target="_blank" rel="noopener https://www.instagram.com/luiiisfeliipe_">Instagram</a></li>
-                <li><a href="mailto:luisfelipepereira508@gmail.com">E-mail</a></li>
-                <li><a href="https://wa.me/5535999635717" target="_blank" rel="noopener">Fale comigo no WhatsApp</a></li>
+                <li>
+                    <a href="https://github.com/luisfelipepereira" target="_blank" rel="noopener noreferrer">
+                        <img class="contato-icone" src="imagens/contato/github.svg" alt="Icone GitHub" width="18" height="18" loading="lazy" decoding="async">
+                        GitHub
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/luiiisfeliipe_" target="_blank" rel="noopener noreferrer">
+                        <img class="contato-icone" src="imagens/contato/instagram.svg" alt="Icone Instagram" width="18" height="18" loading="lazy" decoding="async">
+                        Instagram
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:luisfelipepereira508@gmail.com">
+                        <img class="contato-icone" src="imagens/contato/email.svg" alt="Icone E-mail" width="18" height="18" loading="lazy" decoding="async">
+                        E-mail
+                    </a>
+                </li>
+                <li>
+                    <a href="https://wa.me/5535999635717" target="_blank" rel="noopener noreferrer">
+                        <img class="contato-icone" src="imagens/contato/whatsapp.svg" alt="Icone WhatsApp" width="18" height="18" loading="lazy" decoding="async">
+                        WhatsApp
+                    </a>
+                </li>
             </ul>
         </section>
     </main>
@@ -86,5 +132,22 @@
     <footer class="rodape">
         <p>© 2026 Luiz Felipe Pereira. Todos os direitos reservados.</p>
     </footer>
+    <script>
+        // EDICAO: faz a luz global e dos cards seguir o cursor
+        document.addEventListener("mousemove", (event) => {
+            document.documentElement.style.setProperty("--cursor-x", `${event.clientX}px`);
+            document.documentElement.style.setProperty("--cursor-y", `${event.clientY}px`);
+        });
+
+        document.querySelectorAll(".card").forEach((card) => {
+            card.addEventListener("mousemove", (event) => {
+                const rect = card.getBoundingClientRect();
+                const x = event.clientX - rect.left;
+                const y = event.clientY - rect.top;
+                card.style.setProperty("--mx", `${x}px`);
+                card.style.setProperty("--my", `${y}px`);
+            });
+        });
+    </script>
 </body>
 </html>
