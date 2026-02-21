@@ -1,11 +1,14 @@
 :root {
-    --bg: #f6f7fb;
-    --surface: #ffffff;
-    --text: #1d2635;
-    --muted: #53607a;
-    --line: #d8deea;
-    --accent: #0e7a6f;
-    --accent-strong: #0a6057;
+    /* EDICAO: tema principal (cores e tamanhos globais) */
+    --cursor-x: 50vw;
+    --cursor-y: 50vh;
+    --bg: #000000;
+    --surface: #2c2b2b2f;
+    --text: #790613a9;
+    --muted: #fffefe;
+    --line: #e900006b;
+    --accent: #a5041780;
+    --accent-strong: #7a7a7ab7;
     --radius: 14px;
     --max-width: 980px;
 }
@@ -24,10 +27,31 @@ body {
     font-family: "Segoe UI", Tahoma, sans-serif;
     color: var(--text);
     background:
-        radial-gradient(circle at 0 0, #dff7f2 0%, transparent 30%),
-        radial-gradient(circle at 100% 0, #e7ecff 0%, transparent 32%),
+        radial-gradient(circle at 0 0, #000000 0%, transparent 30%),
+        radial-gradient(circle at 100% 0, #140204 0%, transparent 25%),
         var(--bg);
     line-height: 1.6;
+}
+
+body::before {
+    /* EDICAO: luz global que acompanha o mouse no site inteiro */
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background: radial-gradient(
+        220px circle at var(--cursor-x) var(--cursor-y),
+        rgba(233, 0, 0, 0.12),
+        transparent 72%
+    );
+}
+
+main,
+header,
+footer {
+    position: relative;
+    z-index: 1;
 }
 
 .container {
@@ -36,24 +60,44 @@ body {
 }
 
 .topo {
-    position: sticky;
-    top: 0;
-    background: rgba(246, 247, 251, 0.92);
+    position: static;
+    background: rgba(0, 0, 0, 0.92);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--line);
 }
 
 .menu {
+    /* EDICAO: alinhamento da logo e links do menu */
     min-height: 70px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 4rem;
 }
 
 .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     color: var(--text);
     font-weight: 700;
     text-decoration: none;
+}
+
+.logo-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    flex-shrink: 0;
+    filter: invert(80%) sepia(8%) saturate(113%) hue-rotate(177deg) brightness(85%) contrast(85%);
+}
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    margin-left: 4rem;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .menu ul {
@@ -63,12 +107,21 @@ body {
 }
 
 .menu a {
+    /* EDICAO: links do cabecalho com somente zoom */
+    display: inline-block;
     color: var(--text);
     text-decoration: none;
     font-weight: 600;
+    transition: transform 0.3s ease;
+}
+
+.menu a:hover {
+    /* EDICAO: efeito de zoom no menu superior */
+    transform: scale(1.12);
 }
 
 .hero {
+    /* EDICAO: espacamento da secao inicial */
     padding: 5rem 0 3rem;
 }
 
@@ -150,11 +203,21 @@ p {
 }
 
 .habilidades li {
-    background-color: #ebf7f5;
-    color: #0a4f48;
+    background-color: #000000;
+    color: #ffffff;
     border-radius: 8px;
     padding: 0.35rem 0.65rem;
     font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.skill-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    flex-shrink: 0;
 }
 
 .grade-projetos {
@@ -165,12 +228,48 @@ p {
 }
 
 .card {
-    border: 1px solid var(--line);
+    /* EDICAO: brilho que acompanha o mouse */
+    --mx: 50%;
+    --my: 50%;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(233, 0, 0, 0.22);
     border-radius: 12px;
     padding: 1rem;
+    transition: box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(
+        140px circle at var(--mx) var(--my),
+        rgba(233, 0, 0, 0.22),
+        transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.card:hover {
+    border-color: rgba(233, 0, 0, 0.38);
+    box-shadow: 0 0 14px rgba(233, 0, 0, 0.18);
+}
+
+.card:hover::before {
+    opacity: 1;
 }
 
 .card a {
+    /* EDICAO: botao dos cards em PROJETOS */
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.45rem 0.8rem;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--surface);
     color: var(--accent-strong);
     text-decoration: none;
     font-weight: 600;
@@ -185,9 +284,30 @@ p {
 }
 
 .contato-lista a {
+    /* EDICAO: estilo dos links de contato */
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.45rem 0.8rem;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--surface);
     color: var(--accent-strong);
     font-weight: 600;
     text-decoration: none;
+    transition: transform 0.25s ease;
+}
+
+.contato-lista a:hover {
+    transform: scale(1.08);
+}
+
+.contato-icone {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    flex-shrink: 0;
+    filter: invert(80%) sepia(8%) saturate(113%) hue-rotate(177deg) brightness(85%) contrast(85%);
 }
 
 .rodape {
