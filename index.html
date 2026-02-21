@@ -3,28 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curso em Vídeo</title>
+    <meta name="description" content="Portfólio pessoal com projetos, habilidades e formas de contato.">
+    <title>Seu Nome | Portfólio</title>
     <link rel="stylesheet" href="estilos/style.css">
-    <link rel="stylesheet" href="https://luiiisfeliipepereira.io">
 </head>
 <body>
-    <main>
-        <header>
-            <h1>Cursos Grátis</h1>
-            <img src="imagens/curso-em-video-cor.png" alt="Curso em Vídeo">
-        </header>
-        <article>
-            <h2>Curso de HTML5 com CSS3</h2>
-            <img class="lado" src="imagens/curso-html-css.png" alt="Curso HTML">
-            <p>A <abbr title="HyperText Markup Language">HTML</abbr> é uma linguagem de marcação para a criação de sites. Atualmente na versão 5, ela usa a semântica dos elementos para criar o conteúdo de uma página Web. Com as <abbr title="Cascading Style Sheets">CSS</abbr>, criamos as configurações visuais que um site vai ter.</p>
-            <p><a href="curso-html.html">Acesse o curso de HTML5</a></p>
-        </article>
-        <article>
-            <h2>Curso de JavaScript</h2>
-            <img class="lado" src="imagens/curso-javascript.png" alt="Curso JS">
-            <p><abbr title="JavaScript">JavaScript</abbr> é uma linguagem de script criada para aumentar a interatividade entre um site e seus visitantes. Os códigos em JS são executados dentro do navegador e dão acesso aos elementos HTML por meio do <abbr title="Document Object Model">DOM</abbr>.</p>
-            <p><a href="curso-js.html">Acesse o curso de JavaScript</a></p>
-        </article>
+    <header class="topo">
+        <nav class="container menu">
+            <a class="logo" href="#inicio">Seu Nome</a>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="inicio">
+        <section class="hero container">
+            <p class="tag">Desenvolvedor em formação</p>
+            <h1>Construo sites simples, rápidos e bem organizados</h1>
+            <p>
+                Este é o começo do meu portfólio. Aqui vou reunir meus projetos, aprendizados
+                e evolução como desenvolvedor.
+            </p>
+            <div class="acoes">
+                <a class="botao primario" href="#projetos">Ver projetos</a>
+                <a class="botao secundario" href="#contato">Falar comigo</a>
+            </div>
+        </section>
+
+        <section id="sobre" class="container bloco">
+            <h2>Sobre mim</h2>
+            <p>
+                Escreva aqui um resumo curto sobre você: área de interesse, tecnologias que está estudando
+                e o tipo de oportunidade que procura.
+            </p>
+            <ul class="habilidades">
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+                <li>Git e GitHub</li>
+            </ul>
+        </section>
+
+        <section id="projetos" class="container bloco">
+            <h2>Projetos</h2>
+            <div class="grade-projetos">
+                <article class="card">
+                    <h3>Projeto 01</h3>
+                    <p>Descrição curta do projeto, problema que ele resolve e tecnologias usadas.</p>
+                    <a href="#" aria-label="Abrir projeto 01">Ver detalhes</a>
+                </article>
+                <article class="card">
+                    <h3>Projeto 02</h3>
+                    <p>Descrição curta do projeto, problema que ele resolve e tecnologias usadas.</p>
+                    <a href="#" aria-label="Abrir projeto 02">Ver detalhes</a>
+                </article>
+                <article class="card">
+                    <h3>Projeto 03</h3>
+                    <p>Descrição curta do projeto, problema que ele resolve e tecnologias usadas.</p>
+                    <a href="#" aria-label="Abrir projeto 03">Ver detalhes</a>
+                </article>
+            </div>
+        </section>
+
+        <section id="contato" class="container bloco">
+            <h2>Contato</h2>
+            <p>Você pode me encontrar nos links abaixo:</p>
+            <ul class="contato-lista">
+                <li><a href="#" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                <li><a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                <li><a href="mailto:seuemail@exemplo.com">E-mail</a></li>
+            </ul>
+        </section>
     </main>
+
+    <footer class="rodape">
+        <p>© 2026 Seu Nome. Todos os direitos reservados.</p>
+    </footer>
 </body>
 </html>
