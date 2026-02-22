@@ -42,7 +42,7 @@ html {
 
 body {
     min-height: 100vh;
-    font-family: "Inter", "Segoe UI", sans-serif;
+    font-family: "Space Grotesk", "Segoe UI", sans-serif;
     color: var(--text);
     background:
         radial-gradient(circle at 10% 0%, rgba(79, 124, 255, 0.2), transparent 32%),
@@ -102,19 +102,22 @@ footer {
 }
 
 .logo-mark {
-    width: 2.35rem;
-    height: 2.35rem;
-    border-radius: 10px;
+    width: 3rem;
+    height: 3rem;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
-    background: linear-gradient(135deg, var(--accent), var(--accent-2));
-    box-shadow: 0 8px 22px rgba(37, 102, 255, 0.35);
 }
 
-.logo-mark i {
-    font-size: 1rem;
+.logo-mark img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: saturate(1.28) contrast(1.18) brightness(1.1)
+        drop-shadow(0 10px 24px rgba(36, 99, 255, 0.42))
+        drop-shadow(0 0 10px rgba(23, 213, 181, 0.22));
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
 }
 
 .logo-texto {
@@ -130,7 +133,7 @@ footer {
 }
 
 .logo-texto small {
-    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
     color: var(--muted);
     font-size: 0.66rem;
     letter-spacing: 0.08em;
@@ -229,7 +232,7 @@ footer {
 h1,
 h2,
 h3 {
-    font-family: "Poppins", "Inter", sans-serif;
+    font-family: "Sora", "Space Grotesk", sans-serif;
     line-height: 1.2;
 }
 
@@ -441,7 +444,7 @@ p {
 }
 
 .habilidades li {
-    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
