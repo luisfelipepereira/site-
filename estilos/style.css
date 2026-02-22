@@ -79,18 +79,46 @@ footer {
 .logo {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.7rem;
     color: var(--text);
     font-weight: 700;
     text-decoration: none;
 }
 
-.logo-icon {
-    width: 20px;
-    height: 20px;
-    object-fit: contain;
-    flex-shrink: 0;
-    filter: invert(80%) sepia(8%) saturate(113%) hue-rotate(177deg) brightness(85%) contrast(85%);
+.logo-mark {
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(233, 0, 0, 0.8), rgba(165, 4, 23, 0.25));
+    color: #fff;
+    box-shadow: 0 0 16px rgba(233, 0, 0, 0.3);
+}
+
+.logo-mark i {
+    font-size: 1.05rem;
+}
+
+.logo-texto {
+    display: inline-flex;
+    flex-direction: column;
+    line-height: 1.05;
+}
+
+.logo-texto strong {
+    color: #e4e4e4;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+}
+
+.logo-texto small {
+    color: var(--accent-strong);
+    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.66rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
 }
 .nav-links {
     display: flex;
@@ -100,13 +128,7 @@ footer {
     align-items: center;
 }
 
-.menu ul {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
-}
-
-.menu a {
+.nav-links a {
     /* EDICAO: links do cabecalho com somente zoom */
     display: inline-block;
     color: var(--text);
@@ -115,7 +137,7 @@ footer {
     transition: transform 0.3s ease;
 }
 
-.menu a:hover {
+.nav-links a:hover {
     /* EDICAO: efeito de zoom no menu superior */
     transform: scale(1.12);
 }
@@ -123,16 +145,6 @@ footer {
 .hero {
     /* EDICAO: espacamento da secao inicial */
     padding: 5rem 0 3rem;
-}
-
-.tag {
-    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-    display: inline-block;
-    border: 1px solid var(--line);
-    border-radius: 99px;
-    padding: 0.35rem 0.8rem;
-    color: var(--muted);
-    margin-bottom: 1rem;
 }
 
 h1 {
@@ -209,12 +221,6 @@ samp {
     background-color: var(--accent-strong);
 }
 
-.secundario {
-    border-color: var(--line);
-    color: var(--text);
-    background-color: var(--surface);
-}
-
 .bloco {
     padding: 2rem;
     background-color: var(--surface);
@@ -259,11 +265,10 @@ samp {
     gap: 0.45rem;
 }
 
-.skill-icon {
-    width: 20px;
-    height: 20px;
-    object-fit: contain;
-    flex-shrink: 0;
+.bi-ui-icon {
+    color: #f4f4f4;
+    font-size: 1rem;
+    line-height: 1;
 }
 
 .grade-projetos {
@@ -283,15 +288,6 @@ samp {
     border-radius: 12px;
     padding: 1rem;
     transition: box-shadow 0.25s ease, border-color 0.25s ease;
-}
-
-.projeto-thumb {
-    width: 100%;
-    aspect-ratio: 16 / 10;
-    object-fit: cover;
-    border-radius: 10px;
-    border: 1px solid var(--line);
-    margin-bottom: 0.8rem;
 }
 
 .card::before {
@@ -357,14 +353,6 @@ samp {
     transform: scale(1.08);
 }
 
-.contato-icone {
-    width: 18px;
-    height: 18px;
-    object-fit: contain;
-    flex-shrink: 0;
-    filter: invert(80%) sepia(8%) saturate(113%) hue-rotate(177deg) brightness(85%) contrast(85%);
-}
-
 .rodape {
     text-align: center;
     color: var(--muted);
@@ -378,6 +366,15 @@ samp {
         padding: 0.9rem 0;
         flex-direction: column;
         gap: 0.7rem;
+    }
+
+    .logo {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .nav-links {
+        margin-left: 0;
     }
 
     .hero {
