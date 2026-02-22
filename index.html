@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,146 +7,244 @@
     <title>Luiz Felipe Pereira de Lima | Portfólio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="estilos/style.css">
 </head>
 <body>
-    <!-- EDICAO: cabecalho e links do menu -->
-    <header class="topo">
-        <nav class="container menu">
-            <a class="logo" href="#inicio">
+    <header class="topo" id="topo">
+        <nav class="container menu" aria-label="Navegação principal">
+            <a class="logo" href="#inicio" aria-label="Voltar ao início">
                 <span class="logo-mark" aria-hidden="true">
                     <i class="bi bi-braces-asterisk"></i>
                 </span>
                 <span class="logo-texto">
                     <strong>Luiz Felipe Pereira</strong>
-                    <small>Dev Front-End</small>
+                    <small>Web Developer</small>
                 </span>
             </a>
-            <div class="nav-links">
-             <a href="#sobre">SOBRE</a>
-             <a href="#projetos">PROJETOS</a>
-             <a href="#contato">CONTATO</a>
+
+            <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menu" aria-controls="siteNav" aria-expanded="false">
+                <i class="bi bi-list"></i>
+            </button>
+
+            <div class="menu-actions" id="siteNav">
+                <div class="nav-links">
+                    <a href="#sobre">SOBRE</a>
+                    <a href="#habilidades">HABILIDADES</a>
+                    <a href="#projetos">PROJETOS</a>
+                    <a href="#contato">CONTATO</a>
+                </div>
+                <button class="theme-toggle" id="themeToggle" type="button" aria-label="Alternar tema claro e escuro">
+                    <i class="bi bi-moon-stars-fill" id="themeIcon" aria-hidden="true"></i>
+                    <span id="themeLabel">Escuro</span>
+                </button>
             </div>
         </nav>
     </header>
 
     <main id="inicio">
-        <!-- EDICAO: texto principal da home -->
-        <section class="hero container">
+        <section class="hero container reveal">
+            <p class="hero-kicker">Portfólio Profissional</p>
             <h1 id="hero-title" aria-live="polite">Desenvolvedor WEB</h1>
+            <p class="hero-subtitle">Construo interfaces modernas, acessíveis e com foco em performance e experiência do usuário.</p>
             <div class="acoes">
-                <a class="botao primario" href="#projetos">PROJETOS</a>
-                <a class="botao primario" href="#contato">CONTATO</a>
+                <a class="botao primario" href="#projetos">
+                    <i class="bi bi-rocket-takeoff-fill" aria-hidden="true"></i>
+                    Projetos
+                </a>
+                <a class="botao ghost" href="#contato">
+                    <i class="bi bi-chat-dots-fill" aria-hidden="true"></i>
+                    Contato
+                </a>
             </div>
         </section>
 
-        <!-- EDICAO: sobre voce e lista de habilidades -->
-        <section id="sobre" class="container bloco">
-            <h2>SOBRE MIM!!</h2>
+        <section id="sobre" class="container bloco reveal">
+            <h2>Sobre Mim</h2>
             <div class="sobre-conteudo">
                 <img class="perfil-img" src="imagens/Logo/LOGO5.png" alt="Foto de perfil de Luiz Felipe" width="320" height="320" loading="lazy" decoding="async">
-                <p>
-                 Sou estudante de Análise e Desenvolvimento de Sistemas, focado em construir
-                 uma carreira sólida na área de programação e desenvolvimento de sistemas.<br>
-                 Tenho interesse em desenvolvimento web e estou constantemente aprimorando
-                 meus conhecimentos em HTML, CSS, JavaScript e lógica de programação. 
-                 Busco oportunidades de estágio e projetos desafiadores que me permitam aplicar
-                 minhas habilidades, evoluir tecnicamente e gerar soluções reais através da tecnologia.
-                </p>
+                <div>
+                    <p>
+                        Sou estudante de Análise e Desenvolvimento de Sistemas, focado em construir uma carreira sólida em desenvolvimento web.
+                        Tenho interesse especial em HTML, CSS e JavaScript, sempre buscando evoluir tecnicamente com projetos reais.
+                    </p>
+                    <p>
+                        Meu objetivo é criar soluções claras, performáticas e com design profissional, unindo visual moderno com boa usabilidade.
+                    </p>
+                </div>
             </div>
         </section>
 
-        <!-- EDICAO: skills fora do card sobre mim -->
-        <section id="habilidades" class="container bloco">
+        <section id="habilidades" class="container bloco reveal">
             <h2>Habilidades</h2>
-            <article class="card">
-                <h3>Stack Atual</h3>
-                <ul class="habilidades">
-                    <li>
-                        <i class="bi bi-filetype-html bi-ui-icon" aria-hidden="true"></i>
-                        HTML5
-                    </li>
-                    <li>
-                        <i class="bi bi-filetype-css bi-ui-icon" aria-hidden="true"></i>
-                        CSS3
-                    </li>
-                    <li>
-                        <i class="bi bi-filetype-js bi-ui-icon" aria-hidden="true"></i>
-                        JavaScript
-                    </li>
-                    <li>
-                        <i class="bi bi-git bi-ui-icon" aria-hidden="true"></i>
-                        <i class="bi bi-github bi-ui-icon" aria-hidden="true"></i>
-                        Git e GitHub
-                    </li>
-                </ul>
-            </article>
-        </section>
+            <div class="skills-grid">
+                <article class="card skill-card">
+                    <h3>Domínio Técnico</h3>
+                    <div class="skill-progress-item">
+                        <div class="skill-head">
+                            <span><i class="bi bi-filetype-html" aria-hidden="true"></i> HTML5</span>
+                            <strong>90%</strong>
+                        </div>
+                        <div class="skill-track"><span style="--value: 90%"></span></div>
+                    </div>
+                    <div class="skill-progress-item">
+                        <div class="skill-head">
+                            <span><i class="bi bi-filetype-css" aria-hidden="true"></i> CSS3</span>
+                            <strong>82%</strong>
+                        </div>
+                        <div class="skill-track"><span style="--value: 82%"></span></div>
+                    </div>
+                    <div class="skill-progress-item">
+                        <div class="skill-head">
+                            <span><i class="bi bi-filetype-js" aria-hidden="true"></i> JavaScript</span>
+                            <strong>74%</strong>
+                        </div>
+                        <div class="skill-track"><span style="--value: 74%"></span></div>
+                    </div>
+                </article>
 
-        <!-- EDICAO: cards de projetos -->
-        <section id="projetos" class="container bloco">
-            <h2>Projetos</h2>
-            <div class="grade-projetos">
-                <article class="card">
-                    <h3>Projeto 01</h3>
-                    <p>Projetos em desenvolvimento.</p>
-                    <a href="#" aria-label="Abrir projeto 01">Ver detalhes</a>
-                </article>
-                <article class="card">
-                    <h3>Projeto 02</h3>
-                    <p>Projetos em desenvolvimento.</p>
-                    <a href="#" aria-label="Abrir projeto 02">Ver detalhes</a>
-                </article>
-                <article class="card">
-                    <h3>Projeto 03</h3>
-                    <p>Projetos em desenvolvimento.</p>
-                    <a href="#" aria-label="Abrir projeto 03">Ver detalhes</a>
+                <article class="card skill-card">
+                    <h3>Ferramentas</h3>
+                    <ul class="habilidades">
+                        <li><i class="bi bi-git"></i> Git</li>
+                        <li><i class="bi bi-github"></i> GitHub</li>
+                        <li><i class="bi bi-bootstrap"></i> Bootstrap</li>
+                        <li><i class="bi bi-terminal-fill"></i> CLI</li>
+                        <li><i class="bi bi-kanban-fill"></i> Scrum</li>
+                    </ul>
                 </article>
             </div>
         </section>
 
-        <!-- EDICAO: links de contato -->
-        <section id="contato" class="container bloco">
+        <section id="projetos" class="container bloco reveal">
+            <h2>Projetos em Destaque</h2>
+            <div class="grade-projetos">
+                <article class="card projeto-card reveal">
+                    <div class="projeto-topo">
+                        <span class="chip">Frontend</span>
+                        <span class="chip"><i class="bi bi-stars"></i> Novo</span>
+                    </div>
+                    <h3>Landing Page Conversão</h3>
+                    <p>Página responsiva com foco em performance, copy clara e CTA estratégico.</p>
+                    <a href="#" aria-label="Abrir projeto Landing Page Conversão">Ver detalhes <i class="bi bi-arrow-right-short"></i></a>
+                </article>
+
+                <article class="card projeto-card reveal">
+                    <div class="projeto-topo">
+                        <span class="chip">UI/UX</span>
+                        <span class="chip"><i class="bi bi-lightning-charge-fill"></i> Rápido</span>
+                    </div>
+                    <h3>Dashboard Administrativo</h3>
+                    <p>Interface com componentes reutilizáveis e visual limpo para análise de dados.</p>
+                    <a href="#" aria-label="Abrir projeto Dashboard Administrativo">Ver detalhes <i class="bi bi-arrow-right-short"></i></a>
+                </article>
+
+                <article class="card projeto-card reveal">
+                    <div class="projeto-topo">
+                        <span class="chip">Portfólio</span>
+                        <span class="chip"><i class="bi bi-palette-fill"></i> Design</span>
+                    </div>
+                    <h3>Site Pessoal Profissional</h3>
+                    <p>Projeto autoral com modo claro/escuro, animações e arquitetura enxuta.</p>
+                    <a href="#" aria-label="Abrir projeto Site Pessoal Profissional">Ver detalhes <i class="bi bi-arrow-right-short"></i></a>
+                </article>
+            </div>
+        </section>
+
+        <section id="contato" class="container bloco reveal">
             <h2>Contato</h2>
+            <p class="contact-copy">Aberto a oportunidades, freelas e colaboração em projetos web.</p>
             <ul class="contato-lista">
                 <li>
-                    <a href="https://github.com/luisfelipepereira" target="_blank" rel="noopener noreferrer">
-                        <i class="bi bi-github bi-ui-icon" aria-hidden="true"></i>
-                        GitHub
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.instagram.com/luiiisfeliipe_" target="_blank" rel="noopener noreferrer">
-                        <i class="bi bi-instagram bi-ui-icon" aria-hidden="true"></i>
-                        Instagram
-                    </a>
-                </li>
-                <li>
                     <a href="mailto:luisfelipepereira508@gmail.com">
-                        <i class="bi bi-envelope-fill bi-ui-icon" aria-hidden="true"></i>
-                        E-mail
+                        <i class="bi bi-envelope-fill" aria-hidden="true"></i>
+                        luisfelipepereira508@gmail.com
                     </a>
                 </li>
                 <li>
                     <a href="https://wa.me/5535999635717" target="_blank" rel="noopener noreferrer">
-                        <i class="bi bi-whatsapp bi-ui-icon" aria-hidden="true"></i>
-                        WhatsApp
+                        <i class="bi bi-whatsapp" aria-hidden="true"></i>
+                        +55 (35) 99963-5717
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/luisfelipepereira" target="_blank" rel="noopener noreferrer">
+                        <i class="bi bi-github" aria-hidden="true"></i>
+                        github.com/luisfelipepereira
                     </a>
                 </li>
             </ul>
         </section>
     </main>
 
-    <footer class="rodape">
-        <p>© 2026 Luiz Felipe Pereira. Todos os direitos reservados.</p>
+    <footer class="rodape" id="rodape">
+        <div class="container footer-grid">
+            <section class="footer-brand">
+                <a class="logo" href="#inicio" aria-label="Voltar ao início">
+                    <span class="logo-mark" aria-hidden="true"><i class="bi bi-braces-asterisk"></i></span>
+                    <span class="logo-texto">
+                        <strong>Luiz Felipe Pereira</strong>
+                        <small>Web Developer</small>
+                    </span>
+                </a>
+                <p>Desenvolvimento web com foco em design moderno, organização e experiência do usuário.</p>
+            </section>
+
+            <section>
+                <h3>Links rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#habilidades">Habilidades</a></li>
+                    <li><a href="#projetos">Projetos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Contato</h3>
+                <ul class="footer-contact">
+                    <li><i class="bi bi-envelope-fill" aria-hidden="true"></i> luisfelipepereira508@gmail.com</li>
+                    <li><i class="bi bi-telephone-fill" aria-hidden="true"></i> +55 (35) 99963-5717</li>
+                    <li><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Brasil</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Redes sociais</h3>
+                <div class="footer-social">
+                    <a href="https://github.com/luisfelipepereira" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                    <a href="https://www.instagram.com/luiiisfeliipe_" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="https://wa.me/5535999635717" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                    <a href="mailto:luisfelipepereira508@gmail.com" aria-label="E-mail"><i class="bi bi-envelope-fill"></i></a>
+                </div>
+            </section>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentYear"></span> Luiz Felipe Pereira. Todos os direitos reservados.</p>
+        </div>
     </footer>
+
+    <button class="back-to-top" id="backToTop" type="button" aria-label="Voltar ao topo">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
     <script>
-        // EDICAO: faz a luz global e dos cards seguir o cursor
+        const root = document.documentElement;
+        const menuToggle = document.getElementById("menuToggle");
+        const siteNav = document.getElementById("siteNav");
+        const themeToggle = document.getElementById("themeToggle");
+        const themeIcon = document.getElementById("themeIcon");
+        const themeLabel = document.getElementById("themeLabel");
+        const heroTitle = document.getElementById("hero-title");
+        const backToTop = document.getElementById("backToTop");
+        const currentYear = document.getElementById("currentYear");
+
         document.addEventListener("mousemove", (event) => {
-            document.documentElement.style.setProperty("--cursor-x", `${event.clientX}px`);
-            document.documentElement.style.setProperty("--cursor-y", `${event.clientY}px`);
+            root.style.setProperty("--cursor-x", `${event.clientX}px`);
+            root.style.setProperty("--cursor-y", `${event.clientY}px`);
         });
 
         document.querySelectorAll(".card").forEach((card) => {
@@ -159,18 +257,10 @@
             });
         });
 
-        // EDICAO: efeito de digitacao ao abrir o site
-        const heroTitle = document.getElementById("hero-title");
-        const heroTitleText = "Desenvolvedor WEB";
-
         const typeText = (element, text, speed) => {
             let i = 0;
             element.textContent = "";
             element.classList.add("typing-caret");
-            if (!text.length) {
-                element.classList.remove("typing-caret");
-                return;
-            }
             const timer = setInterval(() => {
                 element.textContent += text[i];
                 i += 1;
@@ -181,7 +271,66 @@
             }, speed);
         };
 
-        typeText(heroTitle, heroTitleText, 80);
+        typeText(heroTitle, "Desenvolvedor WEB", 65);
+
+        const revealElements = document.querySelectorAll(".reveal");
+        const revealObserver = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            },
+            { threshold: 0.2 }
+        );
+
+        revealElements.forEach((element) => revealObserver.observe(element));
+
+        const applyTheme = (theme) => {
+            root.setAttribute("data-theme", theme);
+            const isLight = theme === "light";
+            themeIcon.className = isLight ? "bi bi-sun-fill" : "bi bi-moon-stars-fill";
+            themeLabel.textContent = isLight ? "Claro" : "Escuro";
+        };
+
+        const savedTheme = localStorage.getItem("portfolio-theme");
+        applyTheme(savedTheme || "dark");
+
+        themeToggle.addEventListener("click", () => {
+            const nextTheme = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+            applyTheme(nextTheme);
+            localStorage.setItem("portfolio-theme", nextTheme);
+        });
+
+        menuToggle.addEventListener("click", () => {
+            const isOpen = siteNav.classList.toggle("is-open");
+            menuToggle.setAttribute("aria-expanded", String(isOpen));
+            menuToggle.innerHTML = isOpen ? '<i class="bi bi-x-lg"></i>' : '<i class="bi bi-list"></i>';
+        });
+
+        siteNav.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", () => {
+                siteNav.classList.remove("is-open");
+                menuToggle.setAttribute("aria-expanded", "false");
+                menuToggle.innerHTML = '<i class="bi bi-list"></i>';
+            });
+        });
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 380) {
+                backToTop.classList.add("show");
+            } else {
+                backToTop.classList.remove("show");
+            }
+        });
+
+        backToTop.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+        currentYear.textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
