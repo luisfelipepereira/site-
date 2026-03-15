@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-label="Projeto Landing Page Conversao">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#38bdf8" />
+    </linearGradient>
+    <radialGradient id="glow1" cx="0.7" cy="0.3" r="0.6">
+      <stop offset="0%" stop-color="#a78bfa" stop-opacity="0.55" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#g1)" />
+  <rect width="1200" height="800" fill="url(#glow1)" />
+  <g fill="none" stroke="#38bdf8" stroke-opacity="0.25">
+    <rect x="80" y="120" width="420" height="240" rx="20" />
+    <rect x="540" y="180" width="580" height="320" rx="24" />
+  </g>
+  <text x="90" y="110" font-family="Poppins, sans-serif" font-size="42" fill="#e2e8f0" font-weight="600">Landing Page</text>
+  <text x="90" y="160" font-family="JetBrains Mono, monospace" font-size="20" fill="#cbd5f5">Conversao • Frontend</text>
+</svg>

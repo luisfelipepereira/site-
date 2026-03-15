@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-label="Projeto Pedro Ribeiro Filmaker">
+  <defs>
+    <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="45%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#a78bfa" />
+    </linearGradient>
+    <radialGradient id="glow3" cx="0.8" cy="0.4" r="0.6">
+      <stop offset="0%" stop-color="#22c55e" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#g3)" />
+  <rect width="1200" height="800" fill="url(#glow3)" />
+  <g fill="none" stroke="#a78bfa" stroke-opacity="0.3" stroke-width="3">
+    <path d="M120 560 C240 420, 420 420, 540 560" />
+    <path d="M620 520 C720 420, 880 420, 980 520" />
+  </g>
+  <text x="90" y="120" font-family="Poppins, sans-serif" font-size="42" fill="#e2e8f0" font-weight="600">Pedro Ribeiro Filmaker</text>
+  <text x="90" y="170" font-family="JetBrains Mono, monospace" font-size="20" fill="#cbd5f5">Portfolio • Motion • Visual</text>
+</svg>

@@ -1,42 +1,63 @@
 <!DOCTYPE html>
-<html lang="pt-br" data-theme="dark">
+<html lang="pt-BR" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfólio pessoal com projetos, habilidades e formas de contato.">
-    <title>Luiz Felipe Pereira de Lima | Portfólio</title>
-    <link rel="icon" href="imagens/fivecon/favicon.svg" type="image/svg+xml">
-    <link rel="shortcut icon" href="imagens/fivecon/favicon-alt.svg" type="image/svg+xml">
+    <meta name="theme-color" content="#0f172a">
+    <title>Luiz Felipe Pereira | Portfólio</title>
+    <link rel="icon" href="imagens/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="imagens/favicon/favicon-alt.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Sora:wght@600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="estilos/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/script.js"></script>
 </head>
 <body>
-    <header class="topo" id="topo">
-        <nav class="container menu" aria-label="Navegação principal">
-            <a class="logo" href="#inicio" aria-label="Voltar ao início">
-                <span class="logo-mark" aria-hidden="true">
-                    <img src="imagens/Logo/imagem de perfil.png" alt="" loading="eager" decoding="async">
-                </span>
-                <span class="logo-texto">
-                    <strong>Luiz Felipe Pereira</strong>
-                </span>
+    <a class="skip-link" href="#conteudo">Pular para conteúdo</a>
+
+    <div class="loader" id="loader" aria-hidden="true">
+        <span class="loader__ring"></span>
+        <span class="loader__text">Carregando</span>
+    </div>
+
+    <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+    <div class="cursor-outline" id="cursorOutline" aria-hidden="true"></div>
+
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+    <div class="bg-layer" aria-hidden="true">
+        <span class="orb orb-1" data-parallax data-speed="0.12"></span>
+        <span class="orb orb-2" data-parallax data-speed="0.18"></span>
+        <span class="orb orb-3" data-parallax data-speed="0.22"></span>
+        <span class="grid-overlay"></span>
+    </div>
+
+    <header class="header" id="topo">
+        <nav class="container nav" aria-label="Navegação principal">
+            <a class="brand" href="#inicio">
+                <img class="brand-logo" src="imagens/Logo/imagem de perfil.png" alt="Foto de Luiz Felipe" loading="eager" decoding="async">
+                <span>Luiz Felipe Pereira</span>
             </a>
 
             <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menu" aria-controls="siteNav" aria-expanded="false">
-                <i class="bi bi-list"></i>
+                <i class="bi bi-list" aria-hidden="true"></i>
             </button>
 
-            <div class="menu-actions" id="siteNav">
-                <div class="nav-links">
-                    <a href="#sobre">SOBRE</a>
-                    <a href="#habilidades">HABILIDADES</a>
-                    <a href="#projetos">PROJETOS</a>
-                    <a href="#contato">CONTATO</a>
-                    <a href="https://luisfelipepereira.github.io/Site1/" target="_blank" rel="noopener noreferrer">SITE</a>
-                </div>
+            <div class="nav-menu" id="siteNav">
+                <a href="#sobre">Sobre</a>
+                <a href="#servicos">Serviços</a>
+                <a href="#habilidades">Habilidades</a>
+                <a href="#projetos">Projetos</a>
+                <a href="#experiencia">Experiência</a>
+                <a href="#blog">Blog</a>
+                <a href="#github">GitHub</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contato">Contato</a>
+
                 <button class="theme-toggle" id="themeToggle" type="button" aria-label="Alternar tema claro e escuro">
                     <i class="bi bi-moon-stars-fill" id="themeIcon" aria-hidden="true"></i>
                     <span id="themeLabel">Escuro</span>
@@ -45,301 +66,701 @@
         </nav>
     </header>
 
-    <main id="inicio">
-        <section class="hero container reveal">
-            <h1 id="hero-title" aria-live="polite">Luis Felipe | Desenvolvedor Web</h1>
-            <p class="hero-subtitle">Construo interfaces modernas, acessíveis e com foco em performance e experiência do usuário.</p>
-            <div class="acoes">
-                <a class="botao primario" href="#projetos">
-                    <i class="bi bi-rocket-takeoff-fill" aria-hidden="true"></i>
-                    Projetos
-                </a>
-                <a class="botao ghost" href="#contato">
-                    <i class="bi bi-chat-dots-fill" aria-hidden="true"></i>
-                    Contato
-                </a>
-            </div>
-        </section>
+    <main id="conteudo">
+        <section id="inicio" class="hero">
+            <div class="container hero-grid">
+                <div class="hero-content" data-animate="fade-up">
+                    <span class="eyebrow">Olá, eu sou</span>
+                    <h1>Luiz Felipe <span>Pereira</span></h1>
+                    <p class="typing-line" id="typing"></p>
+                    <p class="hero-subtitle">Construo experiências digitais com foco em performance, acessibilidade e visual moderno.</p>
+                    <div class="hero-actions">
+                        <a class="btn primary" href="#projetos">
+                            <i class="bi bi-rocket-takeoff" aria-hidden="true"></i>
+                            Ver projetos
+                        </a>
+                        <a class="btn ghost" href="https://github.com/luisfelipepereira" target="_blank" rel="noopener noreferrer">
+                            <i class="bi bi-github" aria-hidden="true"></i>
+                            GitHub
+                        </a>
+                        <a class="btn outline" href="#contato">
+                            <i class="bi bi-chat-left-text" aria-hidden="true"></i>
+                            Contato
+                        </a>
+                    </div>
+                </div>
 
-        <section id="sobre" class="container bloco reveal">
-            <h2>Sobre Mim</h2>
-            <div class="sobre-conteudo">
-                <img class="perfil-img" src="imagens/Logo/imagem de perfil.png" alt="Foto de perfil de Luiz Felipe" width="320" height="320" loading="lazy" decoding="async">
-                <div>
-                    <p>
-                        Sou estudante de Análise e Desenvolvimento de Sistemas, focado em construir uma carreira sólida em desenvolvimento web.
-                        Tenho interesse especial em HTML, CSS e JavaScript, sempre buscando evoluir tecnicamente com projetos reais.
-                    </p>
-                    <p>
-                        Meu objetivo é criar soluções claras, performáticas e com design profissional, unindo visual moderno com boa usabilidade.
-                    </p>
+                <div class="hero-card tilt" data-animate="zoom-in" data-animate-delay="120">
+                    <div class="hero-avatar">
+                        <img src="imagens/Logo/imagem de perfil.png" alt="Foto de Luiz Felipe" loading="lazy" decoding="async">
+                        <span class="status" id="availabilityStatus">Disponível</span>
+                    </div>
+                    <div class="hero-stats">
+                        <div>
+                            <div class="stat-number">+10</div>
+                            <div class="stat-label">Projetos</div>
+                        </div>
+                        <div>
+                            <div class="stat-number">6+</div>
+                            <div class="stat-label">Stacks</div>
+                        </div>
+                        <div>
+                            <div class="stat-number">2026</div>
+                            <div class="stat-label">Em evolução</div>
+                        </div>
+                    </div>
+                    <div class="availability-controls">
+                        <span class="availability-label">Status de disponibilidade</span>
+                        <button class="availability-toggle" id="availabilityToggle" type="button" aria-pressed="false">
+                            <span class="availability-dot" aria-hidden="true"></span>
+                            <span id="availabilityLabel">Disponível para novos projetos</span>
+                        </button>
+                    </div>
+                    <div class="hero-tech">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>React</span>
+                        <span>Node</span>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="habilidades" class="container bloco reveal">
-            <h2>Habilidades</h2>
-            <div class="skills-grid">
-                <article class="card skill-card">
-                    <h3>Domínio Técnico</h3>
-                    <div class="skill-progress-item">
-                        <div class="skill-head">
-                            <span><i class="bi bi-filetype-html" aria-hidden="true"></i> HTML5</span>
-                            <strong>90%</strong>
-                        </div>
-                        <div class="skill-track"><span style="--value: 90%"></span></div>
-                    </div>
-                    <div class="skill-progress-item">
-                        <div class="skill-head">
-                            <span><i class="bi bi-filetype-css" aria-hidden="true"></i> CSS3</span>
-                            <strong>82%</strong>
-                        </div>
-                        <div class="skill-track"><span style="--value: 82%"></span></div>
-                    </div>
-                    <div class="skill-progress-item">
-                        <div class="skill-head">
-                            <span><i class="bi bi-filetype-js" aria-hidden="true"></i> JavaScript</span>
-                            <strong>74%</strong>
-                        </div>
-                        <div class="skill-track"><span style="--value: 74%"></span></div>
-                    </div>
+        <section id="insights" class="section">
+            <div class="container section-header" data-animate="fade-up">
+                <h2>Insights do portfólio</h2>
+                <p>Acompanhe visitas e engajamento local. Para dados globais, conecte o painel ao backend.</p>
+            </div>
+            <div class="container insights-grid">
+                <article class="glass-card insight-card" data-animate="fade-up">
+                    <h3>Visitas</h3>
+                    <p class="insight-number" id="viewCount">0</p>
+                    <p class="insight-label">neste dispositivo</p>
                 </article>
+                <article class="glass-card insight-card" data-animate="fade-up" data-animate-delay="80">
+                    <h3>Cliques em projetos</h3>
+                    <p class="insight-number" id="projectClickCount">0</p>
+                    <p class="insight-label">total acumulado</p>
+                </article>
+                <article class="glass-card insight-card" data-animate="fade-up" data-animate-delay="160">
+                    <h3>Projeto mais visto</h3>
+                    <p class="insight-number" id="topProjectName">-</p>
+                    <p class="insight-label" id="topProjectCount">0 cliques</p>
+                </article>
+            </div>
+            <div class="container admin-panel" data-animate="fade-up" data-animate-delay="220">
+                <details class="admin-details" id="adminPanel">
+                    <summary>Dashboard admin (privado)</summary>
+                    <div class="admin-grid">
+                        <div>
+                            <h4>Projetos mais vistos</h4>
+                            <div class="top-projects" id="topProjectsList"></div>
+                        </div>
+                        <div>
+                            <h4>Mapa de visitantes</h4>
+                            <p class="muted">Conecte um serviço de analytics para exibir origem geográfica.</p>
+                        </div>
+                        <div>
+                            <h4>Mensagens recebidas</h4>
+                            <p class="muted" id="adminMessages">As mensagens do formulário aparecem aqui quando o backend estiver configurado.</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+        </section>
 
-                <article class="card skill-card">
-                    <h3>Ferramentas</h3>
-                    <ul class="habilidades">
-                        <li><i class="bi bi-git"></i> Git</li>
-                        <li><i class="bi bi-github"></i> GitHub</li>
-                        <li><i class="bi bi-bootstrap"></i> Bootstrap</li>
-         
+        <section id="sobre" class="section">
+            <div class="container section-header" data-animate="fade-up">
+                <h2>Sobre mim</h2>
+                <p>Sou estudante de ADS com foco em desenvolvimento web, apaixonado por criar interfaces modernas e experiências digitais memoráveis.</p>
+            </div>
+            <div class="container about-grid">
+                <div class="glass-card" data-animate="fade-right">
+                    <p class="about-highlight">Transformo ideias em produtos digitais elegantes, com código limpo e foco em resultados.</p>
+                    <ul class="about-list">
+                        <li>HTML, CSS e JavaScript com foco em usabilidade.</li>
+                        <li>Componentização, performance e boas práticas.</li>
+                        <li>Design systems e consistência visual.</li>
+                    </ul>
+                </div>
+                <div class="about-cards">
+                    <article class="glass-card" data-animate="fade-up" data-animate-delay="80">
+                        <h3>Experiência</h3>
+                        <p>Projetos reais, landing pages de conversão e interfaces completas para marcas digitais.</p>
+                    </article>
+                    <article class="glass-card" data-animate="fade-up" data-animate-delay="160">
+                        <h3>Tecnologias</h3>
+                        <p>Stack moderna com HTML5, CSS3, JavaScript, React e Node.js.</p>
+                    </article>
+                    <article class="glass-card" data-animate="fade-up" data-animate-delay="240">
+                        <h3>Aprendizado</h3>
+                        <p>Estudo contínuo em UI/UX, acessibilidade e performance para evoluir cada entrega.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="servicos" class="section">
+            <div class="container section-header" data-animate="fade-up">
+                <h2>Serviços</h2>
+                <p>Entregas digitais com foco em conversão, velocidade e experiências consistentes.</p>
+            </div>
+            <div class="container services-grid">
+                <article class="glass-card service-card" data-animate="fade-up">
+                    <div class="service-icon"><i class="bi bi-lightning-charge"></i></div>
+                    <h3>Landing pages</h3>
+                    <p>Páginas otimizadas para conversão, performance e campanhas de marketing.</p>
+                    <ul class="service-list">
+                        <li>Copy e estrutura estratégica</li>
+                        <li>Design responsivo</li>
+                        <li>Integrações com tracking</li>
+                    </ul>
+                </article>
+                <article class="glass-card service-card" data-animate="fade-up" data-animate-delay="80">
+                    <div class="service-icon"><i class="bi bi-window"></i></div>
+                    <h3>Sites institucionais</h3>
+                    <p>Presença digital completa com storytelling, SEO técnico e credibilidade.</p>
+                    <ul class="service-list">
+                        <li>Arquitetura clara</li>
+                        <li>Identidade visual consistente</li>
+                        <li>Performance otimizada</li>
+                    </ul>
+                </article>
+                <article class="glass-card service-card" data-animate="fade-up" data-animate-delay="160">
+                    <div class="service-icon"><i class="bi bi-grid-1x2"></i></div>
+                    <h3>Web apps</h3>
+                    <p>Interfaces interativas para produtos digitais, dashboards e MVPs.</p>
+                    <ul class="service-list">
+                        <li>Componentização</li>
+                        <li>Experiências responsivas</li>
+                        <li>Integrações com APIs</li>
+                    </ul>
+                </article>
+                <article class="glass-card service-card" data-animate="fade-up" data-animate-delay="240">
+                    <div class="service-icon"><i class="bi bi-palette2"></i></div>
+                    <h3>UI/UX Design</h3>
+                    <p>Wireframes, protótipos e sistemas visuais escaláveis.</p>
+                    <ul class="service-list">
+                        <li>Fluxos centrados no usuário</li>
+                        <li>Design system leve</li>
+                        <li>Testes de usabilidade</li>
                     </ul>
                 </article>
             </div>
         </section>
 
-        <section id="projetos" class="container bloco reveal">
-            <h2>Projetos em Destaque</h2>
-            <div class="grade-projetos">
-                <article class="card projeto-card reveal">
-                    <div class="projeto-topo">
-                        <span class="chip">Frontend</span>
-                        <span class="chip"><i class="bi bi-stars"></i> Novo</span>
-                    </div>
-                    <h3>Landing Page Conversão</h3>
-                    <p>Página responsiva com foco em performance, copy clara e CTA estratégico.</p>
-                    <a href="https://luisfelipepereira.github.io/Site1/" target="_blank" rel="noopener noreferrer" aria-label="Abrir projeto Landing Page Conversão">Ver detalhes <i class="bi bi-arrow-right-short"></i></a>
+        <section id="processo" class="section">
+            <div class="container section-header" data-animate="fade-up">
+                <h2>Processo de trabalho</h2>
+                <p>Um fluxo claro para garantir entregas rápidas, colaborativas e previsíveis.</p>
+            </div>
+            <div class="container process-grid">
+                <article class="glass-card process-step" data-animate="fade-up">
+                    <span class="step-index">01</span>
+                    <h3>Diagnóstico</h3>
+                    <p>Entendo objetivos, público e métricas para mapear a melhor estratégia.</p>
                 </article>
-
-                <article class="card projeto-card reveal">
-                    <div class="projeto-topo">
-                        <span class="chip">UI/UX</span>
-                        <span class="chip"><i class="bi bi-lightning-charge-fill"></i> Rápido</span>
-                    </div>
-                    <h3>Dashboard Administrativo</h3>
-                    <p>Interface com componentes reutilizáveis e visual limpo para análise de dados.</p>
-                    <a href="#" aria-label="Abrir projeto Dashboard Administrativo">Ver detalhes <i class="bi bi-arrow-right-short"></i></a>
+                <article class="glass-card process-step" data-animate="fade-up" data-animate-delay="80">
+                    <span class="step-index">02</span>
+                    <h3>Design & protótipo</h3>
+                    <p>Crio fluxos, wireframes e interfaces com foco em experiência.</p>
                 </article>
-
-                <article class="card projeto-card reveal">
-                    <div class="projeto-topo">
-                        <span class="chip"><i class="bi bi-palette-fill"></i> Design</span>
-                    </div>
-                    <h3>Site Pessoal Profissional</h3>
-                    <p>Projeto autoral com modo claro/escuro, animações e arquitetura enxuta.</p>
-                    <a href="https://699cc49bd1b68400074e1e2d--pedroribeirofilmaker.netlify.app/" aria-label="Abrir projeto Site Pessoal Profissional">Ver detalhes <i class="bi bi-arrow-right-short"></i></a>
-                    <a href="https://luisfelipepereira.github.io/Site1/" target="_blank" rel="noopener noreferrer">Ver Site</a>
+                <article class="glass-card process-step" data-animate="fade-up" data-animate-delay="160">
+                    <span class="step-index">03</span>
+                    <h3>Desenvolvimento</h3>
+                    <p>Implemento com código limpo, performance e acessibilidade.</p>
+                </article>
+                <article class="glass-card process-step" data-animate="fade-up" data-animate-delay="240">
+                    <span class="step-index">04</span>
+                    <h3>Deploy & evolução</h3>
+                    <p>Publicação monitorada, ajustes finos e melhoria contínua.</p>
                 </article>
             </div>
         </section>
 
-        <section id="contato" class="container bloco reveal">
-            <h2>Contato</h2>
-            <p class="contact-copy">Aberto a oportunidades, freelas e colaboração em projetos web.</p>
-            <ul class="contato-lista">
-                <li>
-                    <a href="mailto:luisfelipepereira508@gmail.com">
-                        <i class="bi bi-envelope-fill" aria-hidden="true"></i>
-                        luisfelipepereira508@gmail.com
-                    </a>
-                </li>
-                <li>
-                    <a href="https://wa.me/5535999635717" target="_blank" rel="noopener noreferrer">
-                        <i class="bi bi-whatsapp" aria-hidden="true"></i>
-                        +55 (35) 99963-5717
-                    </a>
-                </li>
-                <li>
-                    <a href="https://github.com/luisfelipepereira" target="_blank" rel="noopener noreferrer">
-                        <i class="bi bi-github" aria-hidden="true"></i>
-                        github.com/luisfelipepereira
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.linkedin.com/in/luis-felipe-pereira-de-lima-21a643353/" target="_blank" rel="noopener noreferrer">
-                        <i class="bi bi-linkedin" aria-hidden="true"></i>
-                        linkedin.com/in/luis-felipe-pereira-de-lima-21a643353
-                    </a>
-                </li>
-            </ul>
+        <section id="precos" class="section">
+            <div class="container section-header" data-animate="fade-up">
+                <h2>Pacotes e preços</h2>
+                <p>Valores base para facilitar a decisão. Projetos personalizados sob orçamento.</p>
+            </div>
+            <div class="container pricing-grid">
+                <article class="glass-card pricing-card" data-animate="fade-up">
+                    <h3>Start</h3>
+                    <p class="price">R$ 1.200</p>
+                    <ul class="pricing-list">
+                        <li>Landing page essencial</li>
+                        <li>1 rodada de revisão</li>
+                        <li>Deploy e handoff</li>
+                    </ul>
+                    <a class="btn ghost" href="#contato">Solicitar</a>
+                </article>
+                <article class="glass-card pricing-card featured" data-animate="fade-up" data-animate-delay="80">
+                    <div class="pricing-badge">Mais pedido</div>
+                    <h3>Pro</h3>
+                    <p class="price">R$ 2.900</p>
+                    <ul class="pricing-list">
+                        <li>Site completo até 5 páginas</li>
+                        <li>3 rodadas de revisão</li>
+                        <li>Integrações e tracking</li>
+                    </ul>
+                    <a class="btn primary" href="#contato">Solicitar</a>
+                </article>
+                <article class="glass-card pricing-card" data-animate="fade-up" data-animate-delay="160">
+                    <h3>Scale</h3>
+                    <p class="price">Sob consulta</p>
+                    <ul class="pricing-list">
+                        <li>Web app ou projeto sob medida</li>
+                        <li>Dashboard e automações</li>
+                        <li>Acompanhamento contínuo</li>
+                    </ul>
+                    <a class="btn ghost" href="#contato">Solicitar</a>
+                </article>
+            </div>
+        </section>
+
+        <section id="habilidades" class="section">
+            <div class="container section-header" data-animate="fade-up">
+                <h2>Habilidades</h2>
+                <p>Domínio técnico com foco em performance, boas práticas e experiências responsivas.</p>
+            </div>
+            <div class="container skills-grid">
+                <div class="glass-card skill-card" data-animate="fade-up">
+                    <div class="skill-header">
+                        <span class="skill-name"><i class="devicon-html5-plain" aria-hidden="true"></i> HTML5</span>
+                        <strong>92%</strong>
+                    </div>
+                    <div class="skill-bar"><span style="--level: 92%"></span></div>
+                </div>
+                <div class="glass-card skill-card" data-animate="fade-up" data-animate-delay="80">
+                    <div class="skill-header">
+                        <span class="skill-name"><i class="devicon-css3-plain" aria-hidden="true"></i> CSS3</span>
+                        <strong>88%</strong>
+                    </div>
+                    <div class="skill-bar"><span style="--level: 88%"></span></div>
+                </div>
+                <div class="glass-card skill-card" data-animate="fade-up" data-animate-delay="160">
+                    <div class="skill-header">
+                        <span class="skill-name"><i class="devicon-javascript-plain" aria-hidden="true"></i> JavaScript</span>
+                        <strong>80%</strong>
+                    </div>
+                    <div class="skill-bar"><span style="--level: 80%"></span></div>
+                </div>
+                <div class="glass-card skill-card" data-animate="fade-up" data-animate-delay="240">
+                    <div class="skill-header">
+                        <span class="skill-name"><i class="devicon-react-original" aria-hidden="true"></i> React</span>
+                        <strong>72%</strong>
+                    </div>
+                    <div class="skill-bar"><span style="--level: 72%"></span></div>
+                </div>
+            </div>
+            <div class="container skill-tags" data-animate="fade-up" data-animate-delay="300">
+                <span>Node.js</span>
+                <span>Git</span>
+                <span>UI/UX</span>
+                <span>APIs</span>
+                <span>Responsivo</span>
+                <span>Performance</span>
+            </div>
+        </section>
+
+        <section id="projetos" class="section">
+            <div class="container section-header" data-animate="fade-up">
+                <h2>Projetos em destaque</h2>
+                <p>Seleção de trabalhos com foco em design moderno, conversão e experiência do usuário.</p>
+            </div>
+            <div class="container featured-project" id="featuredProject" data-animate="fade-up">
+                <div class="featured-media">
+                    <img id="featuredImage" src="imagens/projetos/projeto-1.svg" alt="Projeto em destaque" loading="lazy" decoding="async">
+                </div>
+                <div class="featured-body">
+                    <span class="featured-badge">Projeto em destaque</span>
+                    <h3 id="featuredTitle">Landing Page Conversão</h3>
+                    <p id="featuredDescription">Página responsiva com CTA estratégico, copy clara e foco em performance.</p>
+                    <ul class="project-tags" id="featuredTags"></ul>
+                    <div class="project-actions">
+                        <a class="btn btn-sm ghost" id="featuredRepo" href="https://github.com/luisfelipepereira" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        <a class="btn btn-sm primary" id="featuredDemo" href="https://luisfelipepereira.github.io/Site1/" target="_blank" rel="noopener noreferrer">Ver projeto</a>
+                    </div>
+                    <div class="featured-controls">
+                        <button class="icon-btn" id="featuredPrev" type="button" aria-label="Projeto anterior"><i class="bi bi-chevron-left"></i></button>
+                        <div class="featured-dots" id="featuredDots"></div>
+                        <button class="icon-btn" id="featuredNext" type="button" aria-label="Próximo projeto"><i class="bi bi-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="container projects-grid">
+                <article class="project-card tilt" data-project-id="landing-page-conversao" data-animate="fade-up">
+                    <div class="project-media">
+                        <img src="imagens/projetos/projeto-1.svg" alt="Preview do projeto Landing Page Conversao" loading="lazy" decoding="async">
+                    </div>
+                    <div class="project-body">
+                        <h3>Landing Page Conversão</h3>
+                        <p>Página responsiva com CTA estratégico, copy clara e foco em performance.</p>
+                        <ul class="project-tags">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>UX Writing</li>
+                        </ul>
+                        <div class="project-actions">
+                            <a class="btn btn-sm ghost" href="https://github.com/luisfelipepereira" target="_blank" rel="noopener noreferrer">GitHub</a>
+                            <a class="btn btn-sm primary" href="https://luisfelipepereira.github.io/Site1/" target="_blank" rel="noopener noreferrer">Ver projeto</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card tilt" data-project-id="barbearia-baroes" data-animate="fade-up" data-animate-delay="120">
+                    <div class="project-media">
+                        <img src="imagens/projetos/projeto-2.svg" alt="Preview do projeto Barbearia Baroes" loading="lazy" decoding="async">
+                    </div>
+                    <div class="project-body">
+                        <h3>Barbearia Barões</h3>
+                        <p>Interface elegante com identidade marcante e seções pensadas para conversão.</p>
+                        <ul class="project-tags">
+                            <li>Design</li>
+                            <li>UI</li>
+                            <li>Frontend</li>
+                        </ul>
+                        <div class="project-actions">
+                            <a class="btn btn-sm ghost" href="https://github.com/luisfelipepereira" target="_blank" rel="noopener noreferrer">GitHub</a>
+                            <a class="btn btn-sm primary" href="https://webboostdev.github.io/baroesbarber/" target="_blank" rel="noopener noreferrer">Ver projeto</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card tilt" data-project-id="pedro-ribeiro-filmaker" data-animate="fade-up" data-animate-delay="240">
+                    <div class="project-media">
+                        <img src="imagens/projetos/projeto-3.svg" alt="Preview do projeto Pedro Ribeiro Filmaker" loading="lazy" decoding="async">
+                    </div>
+                    <div class="project-body">
+                        <h3>Pedro Ribeiro Filmaker</h3>
+                        <p>Projeto autoral com estética cinematográfica, animações suaves e layout imersivo.</p>
+                        <ul class="project-tags">
+                            <li>Motion</li>
+                            <li>Branding</li>
+                            <li>UX</li>
+                        </ul>
+                        <div class="project-actions">
+                            <a class="btn btn-sm ghost" href="https://github.com/luisfelipepereira" target="_blank" rel="noopener noreferrer">GitHub</a>
+                            <a class="btn btn-sm primary" href="https://webboostdev.github.io/pedroribeirofilmaker/" target="_blank" rel="noopener noreferrer">Ver projeto</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="container case-study-grid" data-animate="fade-up">
+                <article class="glass-card case-study">
+                    <h3>Estudo de caso: Landing Page Conversão</h3>
+                    <p>Reestruturação completa do funil, com foco em copy, hierarquia visual e velocidade.</p>
+                    <ul class="case-tags">
+                        <li>+32% de conversão</li>
+                        <li>SEO técnico</li>
+                        <li>Design system leve</li>
+                    </ul>
+                </article>
+                <article class="glass-card case-study">
+                    <h3>Estudo de caso: Barbearia Barões</h3>
+                    <p>Identidade refinada para fortalecer a marca e gerar agendamentos recorrentes.</p>
+                    <ul class="case-tags">
+                        <li>Fluxo de reservas</li>
+                        <li>Motion sutil</li>
+                        <li>Conteúdo estratégico</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section id="experiencia" class="section">
+            <div class="container section-header" data-animate="fade-up">
+                <h2>Timeline de experiência</h2>
+                <p>Uma linha do tempo com trabalhos, estudos e conquistas importantes.</p>
+            </div>
+            <div class="container timeline">
+                <div class="timeline-item" data-animate="fade-up">
+                    <span class="timeline-marker">2023</span>
+                    <div class="glass-card timeline-content">
+                        <h3>Início em Frontend</h3>
+                        <p>Primeiros projetos responsivos, foco em HTML, CSS e boas práticas.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-animate="fade-up" data-animate-delay="80">
+                    <span class="timeline-marker">2024</span>
+                    <div class="glass-card timeline-content">
+                        <h3>Projetos comerciais</h3>
+                        <p>Landing pages, sites institucionais e evolução em UI/UX.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-animate="fade-up" data-animate-delay="160">
+                    <span class="timeline-marker">2025</span>
+                    <div class="glass-card timeline-content">
+                        <h3>Stack avançada</h3>
+                        <p>React, integrações com APIs e rotinas de deploy profissional.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-animate="fade-up" data-animate-delay="240">
+                    <span class="timeline-marker">2026</span>
+                    <div class="glass-card timeline-content">
+                        <h3>Evolução contínua</h3>
+                        <p>Estudos em arquitetura, performance e produtos digitais.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="certificacoes" class="section">
+            <div class="container section-header" data-animate="fade-up">
+                <h2>Certificações & cursos</h2>
+                <p>Badges das formações que fortalecem minha base técnica.</p>
+            </div>
+            <div class="container certifications-grid">
+                <div class="glass-card certification-badge" data-animate="fade-up">
+                    <i class="devicon-html5-plain"></i>
+                    <div>
+                        <strong>HTML5 Avançado</strong>
+                        <span>Alura • 2024</span>
+                    </div>
+                </div>
+                <div class="glass-card certification-badge" data-animate="fade-up" data-animate-delay="80">
+                    <i class="devicon-css3-plain"></i>
+                    <div>
+                        <strong>CSS para UI moderna</strong>
+                        <span>Origamid • 2024</span>
+                    </div>
+                </div>
+                <div class="glass-card certification-badge" data-animate="fade-up" data-animate-delay="160">
+                    <i class="devicon-javascript-plain"></i>
+                    <div>
+                        <strong>JavaScript Completo</strong>
+                        <span>Rocketseat • 2025</span>
+                    </div>
+                </div>
+                <div class="glass-card certification-badge" data-animate="fade-up" data-animate-delay="240">
+                    <i class="devicon-react-original"></i>
+                    <div>
+                        <strong>React Profissional</strong>
+                        <span>Udemy • 2025</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="depoimentos" class="section">
+            <div class="container section-header" data-animate="fade-up">
+                <h2>Depoimentos</h2>
+                <p>Feedbacks de clientes e colegas sobre entregas e colaboração.</p>
+            </div>
+            <div class="container testimonials-grid">
+                <article class="glass-card testimonial-card" data-animate="fade-up">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">MA</div>
+                        <div>
+                            <h3>Mariana Alves</h3>
+                            <span>Marketing • Agência Pulse</span>
+                        </div>
+                    </div>
+                    <p>“Entrega impecável e super rápida. A landing page ficou leve, bonita e converteu bem acima do esperado.”</p>
+                </article>
+                <article class="glass-card testimonial-card" data-animate="fade-up" data-animate-delay="80">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">JR</div>
+                        <div>
+                            <h3>João Ribeiro</h3>
+                            <span>CEO • Barber Club</span>
+                        </div>
+                    </div>
+                    <p>“O site transmitiu exatamente a identidade da barbearia. Nosso número de agendamentos cresceu.”</p>
+                </article>
+                <article class="glass-card testimonial-card" data-animate="fade-up" data-animate-delay="160">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">LS</div>
+                        <div>
+                            <h3>Luana Silva</h3>
+                            <span>Product Owner • Studio M</span>
+                        </div>
+                    </div>
+                    <p>“Fácil comunicação, processo organizado e atenção aos detalhes. Recomendo para qualquer projeto web.”</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="blog" class="section">
+            <div class="container section-header" data-animate="fade-up">
+                <h2>Blog & artigos</h2>
+                <p>Conteúdos técnicos para compartilhar aprendizados e tendências do desenvolvimento web.</p>
+            </div>
+            <div class="container blog-grid">
+                <article class="glass-card blog-card" data-animate="fade-up">
+                    <span class="blog-tag">Performance</span>
+                    <h3>Checklist de performance para landing pages</h3>
+                    <p>Como otimizar carregamento, imagens e scripts para melhorar conversão.</p>
+                    <a class="btn btn-sm ghost" href="#" aria-label="Ler artigo sobre performance">Ler artigo</a>
+                </article>
+                <article class="glass-card blog-card" data-animate="fade-up" data-animate-delay="80">
+                    <span class="blog-tag">UI/UX</span>
+                    <h3>Microinterações que aumentam retenção</h3>
+                    <p>Detalhes de interface que fazem diferença na experiência do usuário.</p>
+                    <a class="btn btn-sm ghost" href="#" aria-label="Ler artigo sobre microinterações">Ler artigo</a>
+                </article>
+                <article class="glass-card blog-card" data-animate="fade-up" data-animate-delay="160">
+                    <span class="blog-tag">JavaScript</span>
+                    <h3>Integrando APIs públicas com segurança</h3>
+                    <p>Boas práticas para consumir dados reais e evitar gargalos.</p>
+                    <a class="btn btn-sm ghost" href="#" aria-label="Ler artigo sobre APIs">Ler artigo</a>
+                </article>
+            </div>
+        </section>
+
+        <section id="stack" class="section">
+            <div class="container section-header" data-animate="fade-up">
+                <h2>Stack tecnológica</h2>
+                <p>Ferramentas e tecnologias que uso no dia a dia para criar experiências completas.</p>
+            </div>
+            <div class="container stack-grid">
+                <div class="stack-item" data-animate="fade-up"><i class="devicon-html5-plain"></i>HTML5</div>
+                <div class="stack-item" data-animate="fade-up" data-animate-delay="60"><i class="devicon-css3-plain"></i>CSS3</div>
+                <div class="stack-item" data-animate="fade-up" data-animate-delay="120"><i class="devicon-javascript-plain"></i>JavaScript</div>
+                <div class="stack-item" data-animate="fade-up" data-animate-delay="180"><i class="devicon-react-original"></i>React</div>
+                <div class="stack-item" data-animate="fade-up" data-animate-delay="240"><i class="devicon-nodejs-plain"></i>Node</div>
+                <div class="stack-item" data-animate="fade-up" data-animate-delay="300"><i class="devicon-git-plain"></i>Git</div>
+                <div class="stack-item" data-animate="fade-up" data-animate-delay="360"><i class="devicon-github-original"></i>GitHub</div>
+                <div class="stack-item" data-animate="fade-up" data-animate-delay="420"><i class="devicon-vscode-plain"></i>VS Code</div>
+            </div>
+        </section>
+
+        <section id="github" class="section">
+            <div class="container section-header" data-animate="fade-up">
+                <h2>GitHub stats</h2>
+                <p>Insights de commits, linguagens e contribuição com base no GitHub Readme Stats.</p>
+            </div>
+            <div class="container github-grid">
+                <div class="github-card" data-animate="fade-up">
+                    <img src="https://github-readme-stats.vercel.app/api?username=luisfelipepereira&show_icons=true&theme=tokyonight" alt="Estatísticas do GitHub" loading="lazy" decoding="async">
+                </div>
+                <div class="github-card" data-animate="fade-up" data-animate-delay="120">
+                    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=luisfelipepereira&layout=compact&theme=tokyonight" alt="Linguagens mais usadas" loading="lazy" decoding="async">
+                </div>
+                <div class="github-card" data-animate="fade-up" data-animate-delay="240">
+                    <img src="https://streak-stats.demolab.com?user=luisfelipepereira&theme=tokyonight" alt="Contribuições no GitHub" loading="lazy" decoding="async">
+                </div>
+            </div>
+            <div class="container github-repos" id="githubRepos" data-username="luisfelipepereira" data-animate="fade-up">
+                <p class="muted">Carregando repositórios...</p>
+            </div>
+        </section>
+
+        <section id="newsletter" class="section">
+            <div class="container newsletter-card" data-animate="fade-up">
+                <div>
+                    <h2>Newsletter</h2>
+                    <p>Receba conteúdos sobre front-end, UI/UX e lançamentos de projetos.</p>
+                </div>
+                <form class="newsletter-form" id="newsletterForm" data-endpoint="https://luiz-portfolio-api.onrender.com/api/newsletter" data-storage-key="newsletter_subscribers">
+                    <label class="sr-only" for="newsletterEmail">Email</label>
+                    <input id="newsletterEmail" name="email" type="email" placeholder="Seu melhor email" required>
+                    <button class="btn primary" type="submit">Quero receber</button>
+                    <p class="form-status" id="newsletterStatus" role="status"></p>
+                </form>
+            </div>
+        </section>
+
+        <section id="faq" class="section">
+            <div class="container section-header" data-animate="fade-up">
+                <h2>FAQ</h2>
+                <p>Respostas rápidas para dúvidas sobre meu processo e entregas.</p>
+            </div>
+            <div class="container faq-list">
+                <details class="glass-card faq-item" data-animate="fade-up">
+                    <summary>Qual o prazo médio de entrega?</summary>
+                    <p>Depende do escopo. Landing pages levam de 7 a 14 dias, enquanto sites completos podem levar até 4 semanas.</p>
+                </details>
+                <details class="glass-card faq-item" data-animate="fade-up" data-animate-delay="80">
+                    <summary>Você oferece manutenção?</summary>
+                    <p>Sim. Posso acompanhar métricas, aplicar melhorias e fazer ajustes contínuos.</p>
+                </details>
+                <details class="glass-card faq-item" data-animate="fade-up" data-animate-delay="160">
+                    <summary>Quais tecnologias utiliza?</summary>
+                    <p>HTML, CSS, JavaScript, React e integrações com APIs, sempre focando em performance.</p>
+                </details>
+                <details class="glass-card faq-item" data-animate="fade-up" data-animate-delay="240">
+                    <summary>É possível ter um orçamento personalizado?</summary>
+                    <p>Sim. Avalio necessidades e envio uma proposta sob medida.</p>
+                </details>
+            </div>
+        </section>
+
+        <section id="contato" class="section">
+            <div class="container section-header" data-animate="fade-up">
+                <h2>Contato</h2>
+                <p>Vamos conversar sobre projetos, freelas ou oportunidades. Respondo rápido.</p>
+            </div>
+            <div class="container contact-grid">
+                <form class="form-card" id="contactForm" data-endpoint="https://luiz-portfolio-api.onrender.com/api/contact" data-storage-key="contact_messages" data-animate="fade-right">
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input id="nome" name="nome" type="text" placeholder="Seu nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" placeholder="seu@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" placeholder="Escreva sua mensagem" required></textarea>
+                    </div>
+                    <button class="btn primary" type="submit">Enviar mensagem</button>
+                    <p class="form-status" id="formStatus" role="status"></p>
+                </form>
+
+                <div class="glass-card" data-animate="fade-left">
+                    <h3>Outros canais</h3>
+                    <p>Prefere falar em outra plataforma? Estou por aqui.</p>
+                    <ul class="contact-list">
+                        <li><a href="mailto:luisfelipepereira508@gmail.com"><i class="bi bi-envelope-fill"></i> luisfelipepereira508@gmail.com</a></li>
+                        <li><a href="https://wa.me/5535999635717" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i> +55 (35) 99963-5717</a></li>
+                        <li><a href="https://github.com/luisfelipepereira" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i> github.com/luisfelipepereira</a></li>
+                        <li><a href="https://www.linkedin.com/in/luis-felipe-pereira-de-lima-21a643353/" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i> LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
         </section>
     </main>
 
-    <footer class="rodape" id="rodape">
+    <footer class="footer" id="rodape">
         <div class="container footer-grid">
-            <section class="footer-brand">
-                <a class="logo" href="#inicio" aria-label="Voltar ao início">
-                    <span class="logo-mark" aria-hidden="true">
-                        <img src="imagens/logo do site/logo-site.png" alt="" loading="lazy" decoding="async">
-                    </span>
-                    <span class="logo-texto">
-                        <strong>Luiz Felipe Pereira</strong>
-                    </span>
+            <div>
+                <a class="brand" href="#inicio">
+                    <img class="brand-logo" src="imagens/logo do site/logo-site.png" alt="Logo do site" loading="lazy" decoding="async">
+                    <span>Luiz Felipe Pereira</span>
                 </a>
-                <p>Desenvolvimento web com foco em design moderno, organização e experiência do usuário.</p>
-            </section>
-
-            <section>
+                <p>Desenvolvedor apaixonado por tecnologia, design e soluções digitais elegantes.</p>
+            </div>
+            <div>
                 <h3>Links rápidos</h3>
                 <ul class="footer-links">
                     <li><a href="#inicio">Início</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#habilidades">Habilidades</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
                     <li><a href="#projetos">Projetos</a></li>
+                    <li><a href="#blog">Blog</a></li>
                     <li><a href="#contato">Contato</a></li>
-                    <li><a href="https://luisfelipepereira.github.io/Site1/" target="_blank" rel="noopener noreferrer">Site</a></li>
                 </ul>
-            </section>
-
-            <section>
-                <h3>Contato</h3>
-                <ul class="footer-contact">
-                    <li><i class="bi bi-envelope-fill" aria-hidden="true"></i> luisfelipepereira508@gmail.com</li>
-                    <li><i class="bi bi-telephone-fill" aria-hidden="true"></i> +55 (35) 99963-5717</li>
-                    <li><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Brasil</li>
-                </ul>
-            </section>
-
-            <section>
+            </div>
+            <div>
                 <h3>Redes sociais</h3>
                 <div class="footer-social">
                     <a href="https://github.com/luisfelipepereira" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github"></i></a>
-                    <a href="https://www.instagram.com/luiiisfeliipe_" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="https://www.instagram.com/luiz.felipe.dev/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
                     <a href="https://wa.me/5535999635717" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
                     <a href="mailto:luisfelipepereira508@gmail.com" aria-label="E-mail"><i class="bi bi-envelope-fill"></i></a>
                     <a href="https://www.linkedin.com/in/luis-felipe-pereira-de-lima-21a643353/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
                 </div>
-            </section>
+            </div>
         </div>
-
         <div class="footer-bottom">
-            <p>&copy; <span id="currentYear"></span> Luiz Felipe Pereira. Todos os direitos reservados.</p>
+            <p>Desenvolvido por Luiz Felipe • <span id="currentYear"></span></p>
         </div>
     </footer>
 
     <button class="back-to-top" id="backToTop" type="button" aria-label="Voltar ao topo">
-        <i class="bi bi-arrow-up"></i>
+        <i class="bi bi-arrow-up" aria-hidden="true"></i>
     </button>
-
-    <script>
-        const root = document.documentElement;
-        const menuToggle = document.getElementById("menuToggle");
-        const siteNav = document.getElementById("siteNav");
-        const themeToggle = document.getElementById("themeToggle");
-        const themeIcon = document.getElementById("themeIcon");
-        const themeLabel = document.getElementById("themeLabel");
-        const heroTitle = document.getElementById("hero-title");
-        const backToTop = document.getElementById("backToTop");
-        const currentYear = document.getElementById("currentYear");
-
-        document.addEventListener("mousemove", (event) => {
-            root.style.setProperty("--cursor-x", `${event.clientX}px`);
-            root.style.setProperty("--cursor-y", `${event.clientY}px`);
-        });
-
-        document.querySelectorAll(".card").forEach((card) => {
-            card.addEventListener("mousemove", (event) => {
-                const rect = card.getBoundingClientRect();
-                const x = event.clientX - rect.left;
-                const y = event.clientY - rect.top;
-                card.style.setProperty("--mx", `${x}px`);
-                card.style.setProperty("--my", `${y}px`);
-            });
-        });
-
-        const typeText = (element, text, speed) => {
-            let i = 0;
-            element.textContent = "";
-            element.classList.add("typing-caret");
-            const timer = setInterval(() => {
-                element.textContent += text[i];
-                i += 1;
-                if (i >= text.length) {
-                    clearInterval(timer);
-                    element.classList.remove("typing-caret");
-                }
-            }, speed);
-        };
-
-        typeText(heroTitle, "Desenvolvedor WEB", 65);
-
-        const revealElements = document.querySelectorAll(".reveal");
-        const revealObserver = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("visible");
-                        revealObserver.unobserve(entry.target);
-                    }
-                });
-            },
-            { threshold: 0.2 }
-        );
-
-        revealElements.forEach((element) => revealObserver.observe(element));
-
-        const applyTheme = (theme) => {
-            root.setAttribute("data-theme", theme);
-            const isLight = theme === "light";
-            themeIcon.className = isLight ? "bi bi-sun-fill" : "bi bi-moon-stars-fill";
-            themeLabel.textContent = isLight ? "Claro" : "Escuro";
-        };
-
-        const savedTheme = localStorage.getItem("portfolio-theme");
-        applyTheme(savedTheme || "dark");
-
-        themeToggle.addEventListener("click", () => {
-            const nextTheme = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-            applyTheme(nextTheme);
-            localStorage.setItem("portfolio-theme", nextTheme);
-        });
-
-        menuToggle.addEventListener("click", () => {
-            const isOpen = siteNav.classList.toggle("is-open");
-            menuToggle.setAttribute("aria-expanded", String(isOpen));
-            menuToggle.innerHTML = isOpen ? '<i class="bi bi-x-lg"></i>' : '<i class="bi bi-list"></i>';
-        });
-
-        siteNav.querySelectorAll("a").forEach((link) => {
-            link.addEventListener("click", () => {
-                siteNav.classList.remove("is-open");
-                menuToggle.setAttribute("aria-expanded", "false");
-                menuToggle.innerHTML = '<i class="bi bi-list"></i>';
-            });
-        });
-
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 380) {
-                backToTop.classList.add("show");
-            } else {
-                backToTop.classList.remove("show");
-            }
-        });
-
-        backToTop.addEventListener("click", () => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-
-        currentYear.textContent = new Date().getFullYear();
-    </script>
 </body>
 </html>
