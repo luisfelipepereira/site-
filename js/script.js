@@ -2,6 +2,7 @@
     const root = document.documentElement;
     const $ = (selector, scope = document) => scope.querySelector(selector);
     const $$ = (selector, scope = document) => Array.from(scope.querySelectorAll(selector));
+    const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     const storage = {
         get(key, fallback) {
@@ -163,46 +164,53 @@
 
     const typingEl = $('#typing');
     if (typingEl) {
-        const phrases = [
-            'Desenvolvedor front-end focado em performance',
-            'Interfaces modernas com UX estratégico',
-            'Disponível para novos projetos'
-        ];
-        let phraseIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
+        const text = 'Desenvolvedor Fullstack';
+        let index = 0;
+        const speed = 90;
 
         const type = () => {
-            const currentPhrase = phrases[phraseIndex];
-            const visibleText = currentPhrase.slice(0, charIndex);
-            typingEl.innerHTML = `${visibleText}<span class="typing-caret"></span>`;
-
-            if (!isDeleting && charIndex < currentPhrase.length) {
-                charIndex += 1;
-                setTimeout(type, 90);
+            typingEl.textContent = text.slice(0, index);
+            if (index < text.length) {
+                index += 1;
+                setTimeout(type, speed);
                 return;
             }
-
-            if (isDeleting && charIndex > 0) {
-                charIndex -= 1;
-                setTimeout(type, 45);
-                return;
-            }
-
-            if (!isDeleting && charIndex === currentPhrase.length) {
-                isDeleting = true;
-                setTimeout(type, 1200);
-                return;
-            }
-
-            if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                phraseIndex = (phraseIndex + 1) % phrases.length;
-                setTimeout(type, 400);
-            }
+            document.body.classList.add('typing-complete');
         };
 
-        type();
+        if (prefersReducedMotion) {
+            typingEl.textContent = text;
+            document.body.classList.add('typing-complete');
+        } else {
+            type();
+        }
+    }
+
+    const framesScroll = document.querySelector('[data-frames-scroll]');
+    if (framesScroll) {
+        const track = framesScroll.querySelector('[data-frames-track]');
+        const rail = framesScroll.querySelector('[data-frames-rail]');
+
+        const updateFrames = () => {
+            if (!track || !rail) return;
+            const isMobile = window.matchMedia('(max-width: 980px)').matches;
+            if (prefersReducedMotion || isMobile) {
+                track.style.transform = '';
+                return;
+            }
+
+            const rect = framesScroll.getBoundingClientRect();
+            const totalScroll = framesScroll.offsetHeight - window.innerHeight;
+            if (totalScroll <= 0) return;
+
+            const progress = Math.min(Math.max(-rect.top, 0), totalScroll) / totalScroll;
+            const maxTranslate = Math.max(track.scrollWidth - rail.clientWidth, 0);
+            track.style.transform = `translate3d(${-maxTranslate * progress}px, 0, 0)`;
+        };
+
+        updateFrames();
+        window.addEventListener('scroll', updateFrames, { passive: true });
+        window.addEventListener('resize', updateFrames);
     }
 
     const availabilityToggle = $('#availabilityToggle');
